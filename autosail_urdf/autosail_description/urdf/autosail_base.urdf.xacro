@@ -1,0 +1,255 @@
+<?xml version="1.0"?>
+<robot name="autosail_base" xmlns:xacro="http://www.ros.org/wiki/xacro">
+	<xacro:property name="PI" value="3.1415926535897931"/>
+
+	<!-- Body properties:global variables  -->
+	<xacro:arg name="locked" default="false" />
+	<xacro:arg name="windType" default="global" />
+	<xacro:arg name="waterType" default="global" />
+	<xacro:property name="windType" value="$(arg windType)" />
+	<xacro:property name="waterType" value="$(arg waterType)" />
+	<xacro:arg name="namespace" default="sailboat"/>
+  	<xacro:property name="namespace" value="$(arg namespace)" scope="global" />
+	
+	<!--Bote-->
+	<link name="${namespace}/base_link">
+		<visual>
+			<geometry>
+				 <mesh filename="/home/camilo/autosail_ws/src/autosail_urdf/autosail_description/meshes/sailboat.dae"/>
+			</geometry>
+			<origin rpy="0 0 1.570796327" xyz="0 0 0"/>
+		</visual>
+		<collision>
+			<geometry>
+				<box size="0.45 0.75 0.075"/> 
+			</geometry>
+			<origin rpy="0 0 1.570796327" xyz="0 0 0.05"/>
+		</collision>
+		<inertial>
+			<origin rpy="0 0 1.570796327" xyz="0 0 0.05"/>
+			<mass value="2.5"/>
+			<inertia ixx="0.043359375" ixy="0.0" ixz="0.0" iyy="0.118359375" iyz="0.0" izz="0.15937500000000002"/>
+       	</inertial>
+		
+	</link>
+	<link name="${namespace}/secondary_link">
+		<inertial>
+			<mass value="0.5"/>
+			<inertia ixx="0.0178125" ixy="0.0" ixz="0.0" iyy="0.0178125" iyz="0.0" izz="0.005625"/>
+			<origin rpy="0 1.570796327 0" xyz="0 0 0.01"/>
+		</inertial>
+		<collision>
+			<geometry>
+				<cylinder radius="0.15" length="0.6"/> 
+			</geometry>
+			<origin rpy="0 1.570796327 0" xyz="0 0 0.01"/>
+		</collision>
+	</link>
+	
+	<!--Engranaje -->
+	<joint name="${namespace}/rudder_joint" type="revolute">
+		<parent link="${namespace}/base_link"/>
+		<child link="${namespace}/rudder_link"/>
+		<origin rpy="0 0 0" xyz="-0.45 0 0"/>
+		<dynamics damping="10.0"/>
+		<axis xyz="0 0 1"/>
+		<limit effort="50" velocity="40" lower="-1.57" upper="1.57"/>
+	</joint>
+	
+	<link name="${namespace}/rudder_link">
+		<visual>
+			<geometry>
+				<mesh filename="/home/camilo/autosail_ws/src/autosail_urdf/autosail_description/meshes/direccion.dae"/>
+			</geometry>
+			<origin rpy="0 0 1.570796327" xyz="0 0 0.05"/>
+			<!--origin rpy="0 0 0" xyz="-0.25 0 0"/-->
+		</visual>
+		<collision>
+			<geometry>
+				<box size="0.05 0.01 0.15"/>
+			</geometry>
+			<origin rpy="0 0 0" xyz="0 0 -0.025"/>
+		</collision>
+		<inertial>
+			<origin rpy="0 0 0" xyz="0 0 0"/>
+			<mass value="0.2"/>
+			<inertia ixx="0.00009875" ixy="0.0" ixz="0.0" iyy="0.00009875" iyz="0.0" izz="0.00001"/>
+       	</inertial>
+	</link>
+
+	<!--Vela principal-->
+	<joint name="${namespace}/main_sail_joint" type="revolute">
+		<parent link="${namespace}/base_link"/>
+		<child link="${namespace}/main_sail_link"/>
+		<origin rpy="0 0 0" xyz="0 0 0.05"/>
+		<dynamics damping="10.0"/>
+		<axis xyz="0 0 1"/>
+		<limit effort="50" velocity="40" lower="-1.57" upper="1.57"/>
+	</joint>
+	<link name="${namespace}/main_sail_link">
+		<visual>
+			<geometry>
+				<mesh filename="/home/camilo/autosail_ws/src/autosail_urdf/autosail_description/meshes/vela.dae"/>
+			</geometry>
+			<origin rpy="0 0 1.570796327" xyz="0 0 -0.15"/>
+
+		</visual>
+		<collision>
+			<geometry>
+				<box size="0.25 0.001 0.85"/>
+			</geometry>
+			<origin rpy="0 0 0" xyz="-0.15 0 0.5"/>
+		</collision>
+		<inertial>
+			<mass value="0.5"/>
+			<inertia ixx="0.010466667" ixy="0.0" ixz="0.0" iyy="0.010466667" iyz="0.0" izz="0.0001"/>
+       	</inertial>
+		
+	</link>
+  
+ 	<!--Vela Secundaria-->
+	<joint name="${namespace}/secondary_sail_joint" type="revolute">
+		<parent link="${namespace}/base_link"/>
+		<child link="${namespace}/secondary_sail_link"/>
+		<origin rpy="0 0 0" xyz="0.25 0 0.05"/>
+		<dynamics damping="10.0"/><!--damping=amortiguamiento-->
+		<axis xyz="0 0 1"/>
+		<limit effort="50" velocity="40" lower="-1.57" upper="1.57" />
+	</joint>
+	<link name="${namespace}/secondary_sail_link">
+		<visual>
+			<geometry>
+				<cylinder length="0.5" radius="0.02"/>
+			</geometry>
+			<origin rpy="0 0 0" xyz="0 0 0.25"/>
+		</visual>
+		<collision>
+			<geometry>
+				<cylinder length="0.5" radius="0.02"/>
+			</geometry>
+			<origin rpy="0 0 0" xyz="0 0 0.25"/>
+		</collision>
+		<inertial>
+			<origin rpy="0 0 0" xyz="0 0 0.25"/>
+			<mass value="0.45"/>
+			<inertia ixx="0.010466667" ixy="0.0" ixz="0.0" iyy="0.010466667" iyz="0.0" izz="0.0001"/>
+       	</inertial>
+	</link>
+	
+	<!-- Quilla -->
+	<joint name="${namespace}/keel_joint" type="revolute">
+		<parent link="${namespace}/base_link"/>
+		<child link="${namespace}/keel_link"/>
+		<origin rpy="0 0 0" xyz="-0.125 0 0"/>
+		<dynamics damping="10.0"/>
+		<axis xyz="0 0 1"/>
+		<limit effort="50" velocity="40" lower="-1.57" upper="1.57"/>
+	</joint>
+	<joint name="${namespace}/secondary_joint" type="revolute">
+		<parent link="${namespace}/base_link"/>
+		<child link="${namespace}/secondary_link"/>
+		<origin rpy="0 0 0" xyz="0 0 0"/>
+		<dynamics damping="10.0" friction="1"/>
+		<axis xyz="0 0 1"/>
+		<limit effort="50" velocity="40" lower="-0.001" upper="0.001"/>
+	</joint>
+	<link name="${namespace}/keel_link">
+		<visual>
+			<geometry>
+				<mesh filename="/home/camilo/autosail_ws/src/autosail_urdf/autosail_description/meshes/quilla.dae" scale="1.5 1.5 1.5"/>
+			</geometry>
+			<origin rpy="0 0 1.570796327" xyz="0 0 0.05"/>
+		
+		</visual>
+		<collision>
+			<geometry>
+				<cylinder length="0.24" radius="0.015"/>
+			</geometry>
+			<origin rpy="0 1.570796327 0" xyz="0 0 -0.4"/>
+		</collision>
+		<inertial>
+			<origin rpy="0 1.570796327 0" xyz="0 0 -0.5"/>
+			<mass value="1.5"/>
+			<inertia ixx="0.007284375" ixy="0.0" ixz="0.0" iyy="0.007284375" iyz="0.0" izz="0.00016875"/>
+       	</inertial>
+	</link>
+	<gazebo>
+		<plugin filename="gz-sim-joint-position-controller-system" name="gz::sim::systems::JointPositionController">
+			<joint_name>${namespace}/rudder_joint</joint_name>
+			<p_gain>0.1</p_gain>
+			<topic>model/${namespace}/rudder_joint</topic> 
+			<!-- this will change gazebo topic to a topic understandable to ROS end -->
+		</plugin>
+		<plugin filename="gz-sim-joint-position-controller-system" name="gz::sim::systems::JointPositionController">
+			<joint_name>${namespace}/main_sail_joint</joint_name>
+			<p_gain>0.1</p_gain>
+			<topic>model/${namespace}/main_sail_joint</topic>
+		</plugin>    
+		<plugin filename="gz-sim-joint-position-controller-system" name="gz::sim::systems::JointPositionController">
+			<joint_name>${namespace}/secondary_sail_joint</joint_name>
+			<p_gain>0.1</p_gain>
+			<topic>model/${namespace}/secondary_sail_joint</topic>
+		</plugin>
+	</gazebo>
+	<gazebo reference="${namespace}/base_link">
+		<visual>
+			<material>
+					<ambient>0.0 0.0 1.0 1</ambient>
+					<diffuse>0.0 0.0 1.0 1</diffuse>
+					<specular>0.0 0.0 1.0 1</specular>
+			</material>
+		</visual>
+		<sensor type="contact" name="contact_sensor">
+			<contact>
+				<!-- collisions are renamed during urdf -> sdf fixed joint lumping -->
+				<collision>${namespace}/base_link_fixed_joint_lump__sailboat/keel_link_collision_1</collision>
+				<topic>/autosail/contacts</topic>
+			</contact>
+			<always_on>1</always_on>
+			<update_rate>5</update_rate>
+		</sensor>
+		<sensor type="air_pressure" name="air_pressure">
+			<pose>0 0 0 0 0 0</pose>
+			<topic>air_pressure</topic>
+			<update_rate>5</update_rate>
+			<always_on>true</always_on>
+			<enable_metrics>false</enable_metrics>
+		</sensor>
+
+	</gazebo>
+	<gazebo reference="${namespace}/main_sail_link">
+		<visual>
+			<material>
+					<ambient>0.0 0.0 1.0 1</ambient>
+					<diffuse>0.0 0.0 1.0 1</diffuse>
+					<specular>0.0 0.0 1.0 1</specular>
+			</material>
+		</visual>
+		<enable_wind>true</enable_wind>
+  	</gazebo>
+	<gazebo reference="${namespace}/rudder_link">
+		<visual>
+			<material>
+					<ambient>0.0 0.0 1.0 1</ambient>
+					<diffuse>0.0 0.0 1.0 1</diffuse>
+					<specular>0.0 0.0 1.0 1</specular>
+			</material>
+		</visual>
+		<enable_wind>false</enable_wind>
+  	</gazebo>
+	<gazebo reference="${namespace}/keel_link">
+		<visual>
+			<material>
+					<ambient>0.0 0.0 1.0 1</ambient>
+					<diffuse>0.0 0.0 1.0 1</diffuse>
+					<specular>0.0 0.0 1.0 1</specular>
+			</material>
+		</visual>
+		
+		<self_collide>false</self_collide>
+  	</gazebo>
+	<gazebo reference="${namespace}/secondary_link">
+		<self_collide>false</self_collide>
+		<enable_wind>false</enable_wind>
+	</gazebo>
+</robot>
