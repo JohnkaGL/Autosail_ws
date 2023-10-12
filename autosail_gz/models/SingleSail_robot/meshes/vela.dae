@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <asset>
+    <contributor>
+      <author>Blender User</author>
+      <authoring_tool>Blender 3.4.1 commit date:2022-12-19, commit time:17:00, hash:55485cb379f7</authoring_tool>
+    </contributor>
+    <created>2023-03-23T18:53:03</created>
+    <modified>2023-03-23T18:53:03</modified>
+    <unit name="meter" meter="1"/>
+    <up_axis>Z_UP</up_axis>
+  </asset>
+  <library_cameras>
+    <camera id="Camera-camera" name="Camera">
+      <optics>
+        <technique_common>
+          <perspective>
+            <xfov sid="xfov">39.59775</xfov>
+            <aspect_ratio>1.777778</aspect_ratio>
+            <znear sid="znear">0.1</znear>
+            <zfar sid="zfar">100</zfar>
+          </perspective>
+        </technique_common>
+      </optics>
+      <extra>
+        <technique profile="blender">
+          <shiftx sid="shiftx" type="float">0</shiftx>
+          <shifty sid="shifty" type="float">0</shifty>
+          <dof_distance sid="dof_distance" type="float">10</dof_distance>
+        </technique>
+      </extra>
+    </camera>
+  </library_cameras>
+  <library_lights>
+    <light id="Light-light" name="Light">
+      <technique_common>
+        <point>
+          <color sid="color">1000 1000 1000</color>
+          <constant_attenuation>1</constant_attenuation>
+          <linear_attenuation>0</linear_attenuation>
+          <quadratic_attenuation>0.00111109</quadratic_attenuation>
+        </point>
+      </technique_common>
+      <extra>
+        <technique profile="blender">
+          <type sid="type" type="int">0</type>
+          <flag sid="flag" type="int">0</flag>
+          <mode sid="mode" type="int">1</mode>
+          <gamma sid="blender_gamma" type="float">1</gamma>
+          <red sid="red" type="float">1</red>
+          <green sid="green" type="float">1</green>
+          <blue sid="blue" type="float">1</blue>
+          <shadow_r sid="blender_shadow_r" type="float">0</shadow_r>
+          <shadow_g sid="blender_shadow_g" type="float">0</shadow_g>
+          <shadow_b sid="blender_shadow_b" type="float">0</shadow_b>
+          <energy sid="blender_energy" type="float">1000</energy>
+          <dist sid="blender_dist" type="float">29.99998</dist>
+          <spotsize sid="spotsize" type="float">75</spotsize>
+          <spotblend sid="spotblend" type="float">0.15</spotblend>
+          <att1 sid="att1" type="float">0</att1>
+          <att2 sid="att2" type="float">1</att2>
+          <falloff_type sid="falloff_type" type="int">2</falloff_type>
+          <clipsta sid="clipsta" type="float">0.04999995</clipsta>
+          <clipend sid="clipend" type="float">30.002</clipend>
+          <bias sid="bias" type="float">1</bias>
+          <soft sid="soft" type="float">3</soft>
+          <bufsize sid="bufsize" type="int">2880</bufsize>
+          <samp sid="samp" type="int">3</samp>
+          <buffers sid="buffers" type="int">1</buffers>
+          <area_shape sid="area_shape" type="int">1</area_shape>
+          <area_size sid="area_size" type="float">0.1</area_size>
+          <area_sizey sid="area_sizey" type="float">0.1</area_sizey>
+          <area_sizez sid="area_sizez" type="float">1</area_sizez>
+        </technique>
+      </extra>
+    </light>
+  </library_lights>
+  <library_images/>
+  <library_geometries>
+    <geometry id="vela-mesh" name="vela">
+      <mesh>
+        <source id="vela-mesh-positions">
+          <float_array id="vela-mesh-positions-array" count="183">395.25 205.5 0.25 395.25 205 0.25 377.2504 383.8048 0.25 0.25 205 0.25 353.0668 561.3765 0.25 322.7281 738.0007 0.25 286.2711 913.4642 0.25 243.7398 1087.555 0.25 195.1856 1260.063 0.25 140.667 1430.78 0.25 0.25 1599.5 0.25 80.25 1599.5 0.25 0.25 205 0.75 395.25 205 0.75 0.25 1719.5 0.25 0.25 1719.5 0 0.25 0 -0.25 0.25 0 0.25 0.25 1720 -0.25 0.25 1720 0 -0.25 0 0.25 -0.25 1719.5 0.25 0.25 1720 0.25 -0.25 1720 0.25 395.25 205.5 0.75 0.25 205.5 0.75 0.25 1599.5 0.45 0.25 205.5 0.45 -20.25 1713.043 0 -20.40361 1713.519 0 -0.25 1719.5 0 -0.25 1720 0 -20.40361 1713.519 0.5 -0.25 1720 0.5 -0.25 1719.5 0.5 -20.25 1713.043 0.5 44.72859 1720 0 45.25 1719.5 0 44.72859 1720 0.5 45.25 1719.5 0.5 0.25 1719.5 0.5 0.25 1720 0.5 -0.25 0 -0.25 -0.25 1720 -0.25 395.25 205.5 0.45 377.2504 383.8048 0.45 353.0668 561.3765 0.45 322.7281 738.0007 0.45 286.2711 913.4642 0.45 243.7398 1087.555 0.45 195.1856 1260.063 0.45 140.667 1430.78 0.45 80.25 1599.5 0.45 -5.999716 1055.5 0.25 6.000184 1055.5 0.25 -5.999716 1055.5 -0.25 6.000184 1055.5 -0.25 -5.999716 1055 0.25 -5.999716 1055 -0.25 6.000184 1055 0.25 6.000184 1055 -0.25</float_array>
+          <technique_common>
+            <accessor source="#vela-mesh-positions-array" count="61" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="vela-mesh-normals">
+          <float_array id="vela-mesh-normals-array" count="81">0 0 -1 0 -1 0 1 0 0 0 0 1 -1 0 0 -0.3061329 0.9519889 0 0.3072258 -0.9516367 0 -0.9516634 -0.3071427 0 -0.9516613 -0.3071497 0 0.692129 0.7217739 0 0.6921343 0.7217688 0 0 1 0 0.9949434 0.1004379 0 0.9949434 0.1004383 0 0.9908531 0.1349452 0 0.9908531 0.1349451 0 0.9855663 0.1692906 0 0.9855663 0.1692898 0 0.9790894 0.2034305 0 0.9790894 0.2034304 0 0.9714303 0.2373254 0 0.9714303 0.2373254 0 0.9625982 0.2709335 0 0.9526036 0.3042145 0 0.9526038 0.3042141 0 0.9414588 0.3371281 0 0 0 1</float_array>
+          <technique_common>
+            <accessor source="#vela-mesh-normals-array" count="27" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="vela-mesh-vertices">
+          <input semantic="POSITION" source="#vela-mesh-positions"/>
+        </vertices>
+        <triangles count="114">
+          <input semantic="VERTEX" source="#vela-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#vela-mesh-normals" offset="1"/>
+          <p>0 0 1 0 2 0 2 0 1 0 3 0 2 0 3 0 4 0 4 0 3 0 5 0 5 0 3 0 6 0 6 0 3 0 7 0 7 0 3 0 8 0 8 0 3 0 9 0 9 0 3 0 10 0 9 0 10 0 11 0 3 1 1 1 12 1 12 1 1 1 13 1 14 2 10 2 15 2 15 2 10 2 3 2 15 2 3 2 16 2 16 2 3 2 17 2 16 2 18 2 15 2 15 2 18 2 19 2 17 3 3 3 20 3 20 3 3 3 21 3 21 3 3 3 10 3 21 3 10 3 14 3 14 3 22 3 21 3 21 3 22 3 23 3 24 3 25 3 13 3 13 3 25 3 12 3 26 4 10 4 27 4 27 4 10 4 3 4 27 4 3 4 12 4 12 4 25 4 27 4 28 0 29 0 30 0 30 0 29 0 31 0 31 5 29 5 23 5 23 5 29 5 32 5 23 5 32 5 33 5 21 2 23 2 34 2 34 2 23 2 33 2 30 6 21 6 28 6 28 6 21 6 35 6 35 6 21 6 34 6 35 7 32 7 28 7 28 8 32 8 29 8 35 3 34 3 32 3 32 3 34 3 33 3 19 0 36 0 15 0 15 0 36 0 37 0 38 9 39 9 36 9 36 10 39 10 37 10 15 1 37 1 14 1 14 1 37 1 39 1 14 1 39 1 40 1 22 4 14 4 41 4 41 4 14 4 40 4 41 3 40 3 38 3 38 3 40 3 39 3 21 4 30 4 20 4 20 4 30 4 42 4 42 4 30 4 43 4 43 4 30 4 31 4 0 2 44 2 1 2 1 2 44 2 13 2 13 2 44 2 24 2 31 11 23 11 19 11 19 11 23 11 22 11 19 11 22 11 36 11 36 11 22 11 38 11 38 11 22 11 41 11 19 11 18 11 31 11 31 11 18 11 43 11 18 0 16 0 43 0 43 0 16 0 42 0 16 1 17 1 42 1 42 1 17 1 20 1 44 11 27 11 24 11 24 11 27 11 25 11 44 12 0 12 45 12 45 13 0 13 2 13 45 14 2 14 46 14 46 15 2 15 4 15 46 16 4 16 47 16 47 17 4 17 5 17 47 18 5 18 48 18 48 19 5 19 6 19 48 20 6 20 49 20 49 21 6 21 7 21 49 22 7 22 50 22 50 22 7 22 8 22 50 23 8 23 51 23 51 24 8 24 9 24 51 25 9 25 52 25 52 25 9 25 11 25 11 11 10 11 52 11 52 11 10 11 26 11 52 3 26 3 51 3 51 3 26 3 27 3 51 26 27 26 50 26 50 3 27 3 49 3 49 3 27 3 48 3 48 3 27 3 47 3 47 3 27 3 46 3 46 3 27 3 45 3 45 3 27 3 44 3 53 11 54 11 55 11 55 11 54 11 56 11 57 4 53 4 58 4 58 4 53 4 55 4 59 1 57 1 60 1 60 1 57 1 58 1 54 2 59 2 56 2 56 2 59 2 60 2 54 3 53 3 59 3 59 3 53 3 57 3 60 0 58 0 56 0 56 0 58 0 55 0</p>
+        </triangles>
+      </mesh>
+    </geometry>
+  </library_geometries>
+  <library_visual_scenes>
+    <visual_scene id="Scene" name="Scene">
+      <node id="vela" name="vela" type="NODE">
+        <matrix sid="transform">4.37114e-11 -4.37114e-11 0.001 0 0.001 -8.74228e-11 -4.37114e-11 0 8.74228e-11 0.001 4.37114e-11 0 0 0 0 1</matrix>
+        <instance_geometry url="#vela-mesh" name="vela"/>
+      </node>
+      <node id="Camera" name="Camera" type="NODE">
+        <matrix sid="transform">0.6859207 -0.3240135 0.6515582 7.358891 0.7276763 0.3054208 -0.6141704 -6.925791 0 0.8953956 0.4452714 4.958309 0 0 0 1</matrix>
+        <instance_camera url="#Camera-camera"/>
+      </node>
+      <node id="Light" name="Light" type="NODE">
+        <matrix sid="transform">-0.2908646 -0.7711008 0.5663932 4.076245 0.9551712 -0.1998834 0.2183912 1.005454 -0.05518906 0.6045247 0.7946723 5.903862 0 0 0 1</matrix>
+        <instance_light url="#Light-light"/>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#Scene"/>
+  </scene>
+</COLLADA>
