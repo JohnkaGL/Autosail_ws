@@ -37,5 +37,16 @@ source /opt/ros/<distro>/setup.bash
 
 # Build and install into workspace
 
-cd ~/ws
+cd ~/autosail_ws
 colcon build
+
+# Source your workspace
+
+After installing and building all files to use them you must source your workspace in the terminal you´ll use them on, as follows:
+cd ~/autosail_ws
+source ./install/setup.bash
+
+# Use
+
+ros2 run GUI GUI_start
+
