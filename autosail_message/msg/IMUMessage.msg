@@ -1,6 +1,0 @@
-float32 yaw
-float32 pitch
-float32 roll
-float32 linear_acceleration_x
-float32 linear_acceleration_y
-float32 linear_acceleration_z
