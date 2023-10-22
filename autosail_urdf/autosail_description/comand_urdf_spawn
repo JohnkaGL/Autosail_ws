@@ -1,5 +1,0 @@
-gz service -l #Revisar que exista en el world/[mundosdf]/create para hacer Spawn en el entorno de Gazebo 
-
-gz service -s /world/buoyancy/create --reqtype gz.msgs.EntityFactory --reptype gz.msgs.Boolean --timeout 1000 --req 'sdf_filename: "/home/camilo/TDG_Ubuntu/Robot_Model/Basic_robot_model.urdf", name: "Basic_robot_model"'
-
- <mesh filename="package://usv_sim/meshes/simpleHull3/base_link.dae" scale="${scale} ${scale} ${scale}"/>

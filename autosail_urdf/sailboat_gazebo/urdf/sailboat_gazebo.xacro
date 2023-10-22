@@ -1,9 +1,0 @@
-<?xml version="1.0"?>
-<robot xmlns:xacro="http://ros.org/wiki/xacro">
-  <!-- Include macros for dynamics plugins -->
-  <xacro:include filename="macros.xacro" />
-  <!-- Defines the base vehicle -->
-  <xacro:include filename="$(find autosail_description)/urdf/autosail_base.urdf.xacro" />
-  <!-- Attach hydrodynamics plugin -->
-  <xacro:autosail_dynamics_gazebo name="dynamics_plugin"/>
-</robot>
