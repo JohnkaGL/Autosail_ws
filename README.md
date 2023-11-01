@@ -15,42 +15,54 @@ controller testing, getting information of the device behaviour under certain co
 
 # Install
 With this requirements satisfied you can now install the simulator. On a new terminal or shell write the following lines:
+
 ´´´
-+ mkdir -p ~/autosail_ws
-+ cd ~/autosail_ws
-+ git clone https://github.com/JohnkaGL/Autosail_ws.git -b main
-+ rosdep install -r --from-paths src -i -y --rosdistro humble
+mkdir -p ~/autosail_ws
+cd ~/autosail_ws
+git clone https://github.com/JohnkaGL/Autosail_ws.git -b main
+rosdep install -r --from-paths src -i -y --rosdistro humble
 ´´´
+
 # After install
 The bridges of the simulator need the ros_gz packages to be built this packages could be installed from cloning into the source directory of the simulator the ros_gz repository
+
 ´´´
 export GZ_VERSION=garden # IMPORTANT: Replace with correct version
 cd ~/autosail_ws/src
 git clone https://github.com/gazebosim/ros_gz.git -b humble
 ´´´
+
 then you must install all of the dependencies with rosdep 
+
 ´´´
 cd ~/autosail_ws
 rosdep install -r --from-paths src -i -y --rosdistro humble
 ´´´
+
 if it fails follow the instructions on: https://github.com/gazebosim/ros_gz/tree/humble, else continue to build the workspace:
 # Source ROS distro's setup.bash
 You must ALWAYS source your ros distro before doing a build process, On the current terminal write: 
 source /opt/ros/<distro>/setup.bash
 
 # Build and install into workspace
+
 ´´´
 cd ~/autosail_ws
 colcon build
 ´´´
+
 # Source your workspace
 
 After installing and building all files to use them you must source your workspace in the terminal you´ll use them on, as follows:
+
 ´´´
 cd ~/autosail_ws
 source ./install/setup.bash
 ´´´
+
 # Use
+
 ´´´
 ros2 run GUI GUI_start
 ´´´
+
