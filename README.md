@@ -42,7 +42,10 @@ rosdep install -r --from-paths src -i -y --rosdistro humble
 if it fails follow the instructions on: https://github.com/gazebosim/ros_gz/tree/humble, else continue to build the workspace:
 # Source ROS distro's setup.bash
 You must ALWAYS source your ros distro before doing a build process, On the current terminal write: 
+
+```
 source /opt/ros/<distro>/setup.bash
+```
 
 # Build and install into workspace
 
