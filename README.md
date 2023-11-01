@@ -6,6 +6,9 @@ Autosail project is an investigation and collaboration project between Antioquia
 This repository is part of controller branch of the project. As its main objetive is to develope a simulate platform for the project in order to protect the hardware from posible harms during 
 controller testing, getting information of the device behaviour under certain conditions, and evaluating controller strategies for the autonomous sailing boat.
 
+[![Alt text](https://img.youtube.com/vi/LjGpxsp8ylU/0.jpg)](https://www.youtube.com/watch?v=LjGpxsp8ylU)
+
+
 # Previuos to install
 + The simulator was disigned to work under ROS2: Humble so its required to have that ROS distribution on your computer you can follow the steps to a SOURCE installation from this link:https://docs.ros.org/en/humble/Installation/Alternatives/Ubuntu-Development-Setup.html
 + Then the simulator is also meant to function under GAZEBO:Garden simulation platform the steps to get a SOURCE install are avaliable at: https://gazebosim.org/docs/garden/install_ubuntu_src
