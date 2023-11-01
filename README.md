@@ -16,10 +16,10 @@ controller testing, getting information of the device behaviour under certain co
 # Install
 With this requirements satisfied you can now install the simulator. On a new terminal or shell write the following lines:
 ´´´
-mkdir -p ~/autosail_ws
-cd ~/autosail_ws
-git clone https://github.com/JohnkaGL/Autosail_ws.git -b main
-rosdep install -r --from-paths src -i -y --rosdistro humble
++ mkdir -p ~/autosail_ws
++ cd ~/autosail_ws
++ git clone https://github.com/JohnkaGL/Autosail_ws.git -b main
++ rosdep install -r --from-paths src -i -y --rosdistro humble
 ´´´
 # After install
 The bridges of the simulator need the ros_gz packages to be built this packages could be installed from cloning into the source directory of the simulator the ros_gz repository
