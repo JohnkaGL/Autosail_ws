@@ -69,4 +69,17 @@ source ./install/setup.bash
 ros2 run GUI GUI_start
 ```
 
+# Images
+
+## Simulator
 ![imagen1](https://raw.githubusercontent.com/JohnkaGL/Autosail_ws/main/thumb_nails/imagen1.png)
+## Configuration
+![imagen2](https://raw.githubusercontent.com/JohnkaGL/Autosail_ws/main/thumb_nails/imagen2.png)
+## Test
+![imagen3](https://raw.githubusercontent.com/JohnkaGL/Autosail_ws/main/thumb_nails/imagen3.png)
+## Model
+![imagen4](https://raw.githubusercontent.com/JohnkaGL/Autosail_ws/main/thumb_nails/imagen4.png)
+## Map
+![imagen5](https://raw.githubusercontent.com/JohnkaGL/Autosail_ws/main/thumb_nails/imagen5.png)
+
+
