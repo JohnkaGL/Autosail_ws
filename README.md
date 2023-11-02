@@ -69,3 +69,4 @@ source ./install/setup.bash
 ros2 run GUI GUI_start
 ```
 
+<span>![</span><span>Aquí la descripción de la imagen por si no carga</span><span>]</span><span>(</span><span>https://raw.githubusercontent.com/JohnkaGL/Autosail_ws/thumb_nails/Screenshot from 2023-11-01 21-20-42.png</span><span>)</span>
